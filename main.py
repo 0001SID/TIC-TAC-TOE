@@ -5,6 +5,7 @@ from bot import *
 import time
 import sys
 import random
+import copy
 while True:
     board = copy.copy(blank_board)
     print('\n\t\t\t\tTIC-TAC-TOE\n\n')
