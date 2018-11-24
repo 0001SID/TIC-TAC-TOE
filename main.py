@@ -6,9 +6,14 @@ import time
 import sys
 import random
 print('\n\t\t\t\tTIC-TAC-TOE\n\n')
-print("Choose Your game mode\n")
-print("1.Multiplayer\n2.Single Player\n")
-mode = input("Mode : ")
+while True:
+    print("Choose Your game mode\n")
+    print("1.Multiplayer\n2.Single Player\n")
+    mode = input("Mode : ")
+    if mode not in ['1','2']:
+        print("please choose a valid input (1/2)\n")
+    else:
+        break
 name = {}
 if mode == '1':
     name['1'] = input("Enter the name of Player 1 : ").upper()
