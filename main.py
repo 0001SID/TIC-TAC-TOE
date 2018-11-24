@@ -23,7 +23,7 @@ while True:
         name['2'] = input("Enter the name of Player 2 : ").upper()
     else:
         name['1'] = input("Enter your name : ").upper()
-        name['2'] = "Bot"
+        name['2'] = "BOT"
     print('\n\t\t\t',name['1'],'is : O')
     print('\t\t\t',name['2'],'is : X')
     if mode == '2':
@@ -61,6 +61,7 @@ while True:
             print('\t\t\t',name[player]+'\'s turn \n')
             if mode == '1':
                 position = input('Choose your position: ')
+                print('\n')
                 if out_range(position) == True:
                     print("Out of range")
                     continue
@@ -71,6 +72,7 @@ while True:
             else:
                 if player == '1':
                     position = input('Choose your position: ')
+                    print('\n')
                     if out_range(position) == True:
                         print("\nOut of range\n")
                         continue
@@ -84,7 +86,7 @@ while True:
                         position = '5'
                     else:
                         position = bot_move(board,level)
-                    print('BOT choose:',position)
+                    print('BOT choose:',position,'\n')
                     break
         board[position] = turn
         print_board(board)
