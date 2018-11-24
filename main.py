@@ -5,8 +5,8 @@ from bot import *
 import time
 import sys
 import random
-blank_board = copy.copy(board)
 while True:
+    board = copy.copy(blank_board)
     print('\n\t\t\t\tTIC-TAC-TOE\n\n')
     while True:
         print("Choose Your game mode\n")
@@ -103,7 +103,6 @@ while True:
     print("\nDo you want to play again? (Y/N)")
     res = input()
     if res == 'y':
-        board = copy.copy(blank_board)
         continue
     else:
         break
