@@ -76,7 +76,10 @@ for j in range(9):
                     break
             else:
                 loading(2,'Thinking')
-                position = bot_move(board,level)
+                if j == 1 and (position in ['1','3','7','9']) and level == 6:
+                    position = '5'
+                else:
+                    position = bot_move(board,level)
                 print('BOT choose:',position)
                 break
     board[position] = turn
