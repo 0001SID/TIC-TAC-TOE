@@ -2,8 +2,8 @@ from check import *
 import sys
 import time
 blank_board = {'1':'1','2':'2','3':'3',
-         '4':'4','5':'5','6':'6',
-         '7':'7','8':'8','9':'9'}
+               '4':'4','5':'5','6':'6',
+               '7':'7','8':'8','9':'9'}
 
 def print_board(board):
     print(' ',board['1'],' | ',board['2'],' | ',board['3'],' ')
