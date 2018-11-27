@@ -13,7 +13,7 @@ while True:
         print("Choose Your game mode\n")
         print("1.Multiplayer\n2.Single Player\n")
         mode = input("Mode : ")
-        if mode not in ['1','2']:
+        if mode not in ['1', '2']:
             print("please choose a valid input (1/2)\n")
         else:
             break
@@ -24,8 +24,8 @@ while True:
     else:
         name['1'] = input("Enter your name : ").upper()
         name['2'] = "BOT"
-    print('\n\t\t\t',name['1'],'is : O')
-    print('\t\t\t',name['2'],'is : X')
+    print('\n\t\t\t', name['1'], 'is : O')
+    print('\t\t\t', name['2'], 'is : X')
     if mode == '2':
         while True:
             print('\n\nChoose level:')
@@ -35,19 +35,19 @@ while True:
             except:
                 print("\nPlease Enter a valid input (1/2/3)\n")
                 continue
-            if level not in range(1,4):
+            if level not in range(1, 4):
                 print("\nPlease Enter a valid input (1/2/3)\n")
             else:
                 break
-        
+
         if level == 3:
             level = 6
         elif level == 2:
             level = 3
     print_board(board)
-    loading(2,'Tossing')
-    toss = random.randint(1,2)
-    print('\t\t\t',name[str(toss)],'win the toss\n')
+    loading(2, 'Tossing')
+    toss = random.randint(1, 2)
+    print('\t\t\t', name[str(toss)], 'win the toss\n')
     if toss == 1:
         player = '1'
         turn = 'O'
@@ -58,14 +58,14 @@ while True:
     for j in range(9):
         global position
         while True:
-            print('\t\t\t',name[player]+'\'s turn \n')
+            print('\t\t\t', name[player]+'\'s turn \n')
             if mode == '1':
                 position = input('Choose your position: ')
                 print('\n')
                 if out_range(position) == True:
                     print("Out of range")
                     continue
-                elif position_overload(board,position) == True:
+                elif position_overload(board, position) == True:
                     print("\t\t\tPosition is already accupied\n")
                 else:
                     break
@@ -76,22 +76,21 @@ while True:
                     if out_range(position) == True:
                         print("\nOut of range\n")
                         continue
-                    if position_overload(board,position) == True:
+                    if position_overload(board, position) == True:
                         print("\t\t\tPosition is already accupied\n")
                     else:
                         break
                 else:
-                    loading(2,'Thinking')
-                    if j == 1 and (position in ['1','3','7','9']) and level == 6:
+                    if j == 1 and (position in ['1', '3', '7', '9']) and level == 6:
                         position = '5'
                     else:
-                        position = bot_move(board,level)
-                    print('BOT choose:',position,'\n')
+                        position = bot_move(board, level)
+                    print('\nBOT choose:', position, '\n')
                     break
         board[position] = turn
         print_board(board)
         if check_win(board) == True:
-            print('\t\t\t',name[player],'Win\n\t\t\t Game Over')
+            print('\t\t\t', name[player], 'Win\n\t\t\t Game Over')
             break
         if turn == 'X':
             turn = 'O'

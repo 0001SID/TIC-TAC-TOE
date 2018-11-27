@@ -1,3 +1,5 @@
+import sys
+import time
 def check_win(board):
     for i in range(1,10,3):
         if board[str(i)]==board[str(i+1)]==board[str(i+2)]:
@@ -26,3 +28,16 @@ def out_range(position):
         return False
     else:
         return True
+def loading(length, name):
+    if length != 0:
+        for l in range(length):
+            chars = '/-\|'
+            for k in chars:
+                sys.stdout.write("\r\t\t\t  "+name+" "+k)
+                time.sleep(0.1)
+        print("\n")
+    else:
+        chars = '/-\|'
+        for k in chars:
+            sys.stdout.write("\r\t\t\t  "+name+" "+k)
+            time.sleep(0.05)
