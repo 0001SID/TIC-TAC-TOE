@@ -31,13 +31,13 @@ def out_range(position):
 def loading(length, name):
     if length != 0:
         for l in range(length):
-            chars = '/-\|'
+            chars = '/-\\|'
             for k in chars:
                 sys.stdout.write("\r\t\t\t  "+name+" "+k)
                 time.sleep(0.1)
         print("\n")
     else:
-        chars = '/-\|'
+        chars = '/-\\|'
         for k in chars:
             sys.stdout.write("\r\t\t\t  "+name+" "+k)
             time.sleep(0.05)
